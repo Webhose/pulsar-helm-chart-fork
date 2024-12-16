@@ -849,9 +849,9 @@ pulsar_metadata:
     tag:
     # uses defaultPullPolicy when unspecified
     pullPolicy:
-  ## set an existing configuration store. This setting applies only when zookeeper is enabled.
-  # configurationStore:
-  # the prefix for the configuration store metadata. This setting applies only when zookeeper is enabled.
+  ## set an existing configuration store
+  configurationStoreProtocol: 
+  configurationStore:
   configurationStoreMetadataPrefix: ""
   # the configuration store port. This setting applies only when zookeeper is enabled.
   configurationStorePort: 2181

@@ -33,7 +33,8 @@ Define configuration store connection string
 */}}
 {{- define "pulsar.configurationStore.connect" -}}
 {{- if .Values.pulsar_metadata.configurationStore }}
-{{- template "pulsar.configurationStore.service" . }}:{{ .Values.pulsar_metadata.configurationStorePort }}
+{{- $service := include "pulsar.configurationStore.service" . }}
+{{- printf "%s://%s:%d" .Values.pulsar_metadata.configurationStoreProtocol $service (int .Values.pulsar_metadata.configurationStorePort) }}
 {{- end -}}
 {{- end -}}
 
